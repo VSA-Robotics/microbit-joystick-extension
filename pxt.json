@@ -1,0 +1,12 @@
+{
+    "name": "Joystick",
+    "version": "0.0.1",
+    "description": "A Micro:bit extension for easy joystick direction detection.",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "main.ts"
+    ]
+}
