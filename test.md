@@ -1,6 +1,4 @@
-Here is the **`test.ts`** file to verify that your **Micro:bit Joystick Extension** is working correctly.
-
-```typescript
+```javascript
 // Test script for Micro:bit Joystick Extension
 basic.showString("TEST");
 
