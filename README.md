@@ -116,11 +116,6 @@ Joystick.onMove("CLICK", function () {
 
 ---
 
-## Contributors
-👤 YOUR_NAME – Created for easy joystick integration in Micro:bit projects.
-
----
-
 ## Future Updates
 - 🔹 Improve dead zone filtering for more stable joystick control.
 - 🔹 Add customizable sensitivity settings.
