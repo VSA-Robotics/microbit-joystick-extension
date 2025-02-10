@@ -79,6 +79,7 @@ Joystick.onMove("CLICK", function () {
     basic.showIcon(IconNames.Heart);
     serial.writeLine("Joystick clicked!");
 });
+```
 
 How It Works
 	1	Reads joystick analog values from P0 (X-axis) and P1 (Y-axis).
