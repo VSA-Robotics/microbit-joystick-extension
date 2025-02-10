@@ -20,8 +20,8 @@ Students can detect **LEFT, RIGHT, UP, DOWN, CENTER, or CLICK** without complex 
    |-------------|--------------|
    | GND         | GND          |
    | +5V         | 3.3V         |
-   | VRX         | P0           |
-   | VRY         | P1           |
+   | URX         | P0           |
+   | URY         | P1           |
    | SW          | P2           |
 
 2. **Upload the example code to Micro:bit.**  
