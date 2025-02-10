@@ -1,4 +1,3 @@
-```javascript
 // Test script for Micro:bit Joystick Extension
 basic.showString("TEST");
 
@@ -53,21 +52,3 @@ Joystick.onMove("CLICK", function () {
     basic.showIcon(IconNames.Heart);
     serial.writeLine("Event: Joystick clicked!");
 });
-```
-
----
-
-### **How to Use `test.ts`?**
-1. **Add this file** to your **GitHub repository**.
-2. **Run it in MakeCode** to verify that:
-   - The **joystick directions** are correctly detected.
-   - The **serial monitor** shows accurate **"Joystick moved"** messages.
-   - The **LED matrix** displays arrows for movement and a heart for clicks.
-   - The **event-based functions trigger correctly**.
-
----
-
-### **What This Test Ensures**
-✅ **Joystick readings are stable** (fixes false "CLICK" issue).  
-✅ **Both continuous and event-driven detection work properly.**  
-✅ **Visual feedback on LED matrix confirms movement detection.**  
