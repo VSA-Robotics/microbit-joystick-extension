@@ -1,12 +1,17 @@
 {
     "name": "Joystick",
-    "version": "0.0.1",
-    "description": "A Micro:bit extension for easy joystick direction detection.",
+    "version": "0.1.0",
+    "description": "A Micro:bit extension for easy joystick direction detection with pull-up support.",
     "license": "MIT",
     "dependencies": {
         "core": "*"
     },
     "files": [
-        "main.ts"
-    ]
+        "main.ts",
+        "test.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
 }
