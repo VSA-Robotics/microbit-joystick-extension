@@ -15,13 +15,14 @@ Students can detect **LEFT, RIGHT, UP, DOWN, CENTER, or CLICK** without complex 
 
 ## Hardware Setup
 1. **Connect the joystick module to the Micro:bit**:  
+   
    | Joystick Pin | Micro:bit Pin |
    |-------------|--------------|
    | GND         | GND          |
-   | +5V        | 3.3V         |
-   | VRX        | P0           |
-   | VRY        | P1           |
-   | SW         | P2           |
+   | +5V         | 3.3V         |
+   | VRX         | P0           |
+   | VRY         | P1           |
+   | SW          | P2           |
 
 2. **Upload the example code to Micro:bit.**  
 
@@ -52,8 +53,12 @@ basic.forever(function () {
     serial.writeLine("Joystick moved: " + direction);
     basic.pause(100);
 });
-2️⃣ Event-Based Detection
+```
+
+### **2️⃣ Event-Based Detection**
 Run specific code only when the joystick moves in a certain direction.
+
+```typescript
 Joystick.onMove("LEFT", function () {
     basic.showString("L");
     serial.writeLine("Joystick moved LEFT");
@@ -82,30 +87,43 @@ Joystick.onMove("CLICK", function () {
 
 ---
 
-How It Works
-	1	Reads joystick analog values from P0 (X-axis) and P1 (Y-axis).
-	2	Reads switch button (SW) from P2, using a pull-up resistor to prevent false detections.
-	3	Converts analog readings into direction labels (LEFT, RIGHT, UP, DOWN, CENTER, CLICK).
-	4	Provides both continuous checking and event-based detection.
+## How It Works
+1. Reads joystick analog values from P0 (X-axis) and P1 (Y-axis).
+2. Reads switch button (SW) from P2, using a pull-up resistor to prevent false detections.
+3. Converts analog readings into direction labels (LEFT, RIGHT, UP, DOWN, CENTER, CLICK).
+4. Provides both continuous checking and event-based detection.
 
 ---
 
 ## Troubleshooting
-False Click Detection?
-	•	Ensure pins.setPull(DigitalPin.P2, PinPullMode.PullUp); is present in your code.
-	•	Double-check your wiring: ✅ GND to GND ✅ VRX (X) to P0 ✅ VRY (Y) to P1 ✅ SW to P2
-Joystick Not Responding?
-	•	Try reversing the X and Y connections.
-	•	Increase the pause() delay in the loop if updates are too fast.
+
+### **False Click Detection?**
+- Ensure `pins.setPull(DigitalPin.P2, PinPullMode.PullUp);` is present in your code.
+- Double-check your wiring:
+  ✅ GND to GND  
+  ✅ VRX (X) to P0  
+  ✅ VRY (Y) to P1  
+  ✅ SW to P2  
+
+### **Joystick Not Responding?**
+- Try reversing the X and Y connections.
+- Increase the `basic.pause()` delay in the loop if updates are too fast.
 
 ---
 
 ## License
 📜 MIT License – Free to modify and use.
 
+---
+
 ## Contributors
 👤 YOUR_NAME – Created for easy joystick integration in Micro:bit projects.
 
+---
+
 ## Future Updates
-🔹 Improve dead zone filtering for more stable joystick control. 🔹 Add customizable sensitivity settings.
+- 🔹 Improve dead zone filtering for more stable joystick control.
+- 🔹 Add customizable sensitivity settings.
+
 🚀 Happy Coding! 🎮
+
