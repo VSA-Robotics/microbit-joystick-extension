@@ -58,31 +58,31 @@ basic.forever(function () {
 ### **2️⃣ Event-Based Detection**
 Run specific code only when the joystick moves in a certain direction.
 
-```typescript
-Joystick.onMove("LEFT", function () {
-    basic.showString("L");
-    serial.writeLine("Joystick moved LEFT");
-});
+```javascript
+let direction = ""
+// Ensure P2 (SW) is set as pull-up input
+pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
+basic.forever(function () {
+    direction = Joystick.getDirection()
+    // Show direction on LED matrix
+    if (direction == "UP") {
+        basic.showArrow(ArrowNames.North)
+    } else if (direction == "DOWN") {
+        basic.showArrow(ArrowNames.South)
+    } else if (direction == "LEFT") {
+        basic.showArrow(ArrowNames.West)
+    } else if (direction == "RIGHT") {
+        basic.showArrow(ArrowNames.East)
+    } else if (direction == "CLICK") {
+        basic.showIcon(IconNames.Heart)
+    } else {
+        // If joystick is centered
+        basic.clearScreen()
+    }
+    serial.writeLine("Joystick moved: " + direction)
+    basic.pause(100)
+})
 
-Joystick.onMove("RIGHT", function () {
-    basic.showString("R");
-    serial.writeLine("Joystick moved RIGHT");
-});
-
-Joystick.onMove("UP", function () {
-    basic.showString("U");
-    serial.writeLine("Joystick moved UP");
-});
-
-Joystick.onMove("DOWN", function () {
-    basic.showString("D");
-    serial.writeLine("Joystick moved DOWN");
-});
-
-Joystick.onMove("CLICK", function () {
-    basic.showIcon(IconNames.Heart);
-    serial.writeLine("Joystick clicked!");
-});
 ```
 
 ---
