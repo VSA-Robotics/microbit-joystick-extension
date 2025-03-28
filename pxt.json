@@ -1,6 +1,6 @@
 {
     "name": "Joystick",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "A Micro:bit extension for easy joystick direction detection with pull-up support.",
     "license": "MIT",
     "dependencies": {
